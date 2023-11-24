@@ -1,0 +1,295 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 10;	
+}
+input[type="date"]:before {
+  content: attr(placeholder);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.65);
+  pointer-events: none;
+  line-height: 1.5;
+  padding: 0 0.5rem;
+}
+
+input[type="date"]:focus:before,
+input[type="date"]:not([value=""]):before
+{
+  display: none;
+}
+
+#TP_JT{
+	 margin: 10
+	
+}
+
+
+#1A {
+    width: 10%;
+    border-color: blue;
+    text-align: center;
+	 margin: 10
+	 
+}
+.A {
+    float: left;
+    width: 100px; height: 100px;
+    margin: -5px 40px;
+	 padding: 0;
+}
+.Eqpmtos {
+ display: inline;
+ width: 20%;
+ float: right;
+}
+
+ .selEquip{ background-color:white; 
+			border-spacing : 5px;
+             padding :5px;
+			 font:25px Tahoma;
+             width :80%;
+			}
+			
+	* {
+  margin: 30 auto;
+  padding: 0;
+}
+
+formi {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  outline: 1px solid lightgrey;
+  padding: 10px;
+}
+formi2{
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  outline: 1px solid lightgrey;
+  padding: 10px;
+  
+    
+}
+
+bt_final{
+	
+}
+
+
+label {
+  color: grey;
+}
+
+
+  input.transparent-input{
+       background-color:white !important;
+       border: 0 none;
+	   padding: 2px;
+	   font-size: large;
+	   color:#FF2E14;
+	   font: 30px Arial, sans-serif;
+	   max-width: 250px;
+	   
+	   
+}
+		
+        table.todos  {
+			border-collapse: collapse;
+           font:13px Tahoma;
+           width :80%;
+        }
+        table.todos tr th  {
+            background-color:#8C8C8C; color:white;
+        }
+        table.todos tr  {
+                text-align: left;
+				 border:1px dotted #000000;
+				text-align:center;
+        }
+		table.todos td {
+		 border:1px dotted #000000;
+    padding:5px;
+		}
+		table.todos th {
+			 border:1px dotted #000000;
+		border: 1px solid black;
+           padding: 5px;
+		}
+        #divUpdate { visibility : hidden }
+		#divCalend { visibility : hidden }
+		
+		 img.face{
+		float: left;
+		border: transparent thin solid;
+		padding: 5px;
+		margin: 0px 10px 10px 0;
+		max-width: 186px;
+		}
+		.large { 
+   border: 1px solid #0d0;
+}
+
+		.logo {
+		   display: flex;
+		   align-items:center;
+			font:25px Tahoma;
+		   
+		}
+
+		.dt_hs {
+		   display: inline-flex;
+		   align-items:center;
+			font:5px Tahoma;
+			 margin: 0 auto;
+		   
+		}
+		.bt {
+		background-color: #A3A3A3A3;
+		font-height: lighter,  sans-serif;
+		color: blue;
+		border-radius: 5px;
+		padding:5px;
+		}
+		.bt2 {
+		background-color: #33BBff;
+		font: lighter, sans-serif;
+		color: white;
+		border-radius: 5px;
+		padding:5px;
+		}
+		
+		#ViewDT1 { visibility : hidden}
+		#ViewDT2 { visibility : hidden }
+		#ViewDT3 {visibility : hidden }
+		#ViewDT4 { visibility : hidden }
+		#ViewDT5 { visibility : hidden }
+		#ViewTextCont { visibility : hidden }
+		
+		.Nom_Us {
+		display: flex;
+		 align-items:center;
+		 
+		  }
+		<!--.hs {
+		display: flex;
+		align-items:center;
+		font:25px Tahoma;
+		 width :80%;-->
+		
+		 <!--
+		background-color:#00BFFF; 
+		font: 15px georgia, sans-serif;
+		color:#0033CC;margin-right: 20px;-->
+		}
+
+		<!--form.horarios {
+		  display: flex;
+		  border-spacing : 5px;
+		<!--width:380px;-->
+		<!--align-items:center;
+		font:25px Tahoma;
+		<!--font: 11px Verdana.
+		color: #003399;-->
+		 <!--width :80%;
+		 padding :5px;
+		<!--padding-left:10px;-->
+		<!--}-->
+		
+		
+		.middle	{
+		
+		font:15px Tahoma;
+		align-items:center;
+		width :100%;
+		
+		}
+		
+		container {
+  display: flex;
+  width: 220px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid black;
+
+  &.radio {
+    flex-direction: column;
+	font:13px Tahoma;
+  }
+   .lists {
+                margin-bottom: 20px;
+
+				
+            }
+			
+	--------------------------Alerta Executado-----------------		
+			
+			
+			body {
+  margin: 0px;
+  font-family: "Arial";
+}
+
+.example {
+  padding: 20px;
+}
+
+input[type=button] {
+  padding: 5px 10px;
+  margin: 10px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #ddd;
+  border: 1px solid #ccc;
+}
+input[type=button]:hover {
+  background: #ccc;
+}
+
+.confirm {
+  display: none;
+}
+.confirm > div:first-of-type {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 0px;
+}
+.confirm > div:last-of-type {
+  padding: 10px 20px;
+  background: white;
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+.confirm > div:last-of-type div:first-of-type {
+  min-width: 150px;
+  padding: 10px;
+}
+.confirm > div:last-of-type div:last-of-type {
+  text-align: right;
+}
+		--------------------------Alerta Executado-----------------		
+		
+#movers-row {
+	margin: -120px 0 0 120px;
+}
+#movers-row div {
+	width: 33.3%;
+	float: left;
+}
+#movers-row div img {
+	float: right;
+}
