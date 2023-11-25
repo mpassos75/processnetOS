@@ -1,6 +1,6 @@
-
-			
-	
+$(window).on("load", function(){
+			document.getElementsByName("ckJT")[2].disabled = true;
+	});
         var db;
         var databasename = "todo";
         var storename = "todos";
@@ -657,10 +657,10 @@ request.onsuccess = function (event) {
    //  alert("Task is performed-1"+ vlnOS);	
 	 
 		
-				var date = $("#Dates").val();
-			
+				var data = $("#Dates").val();
+				//var databr = date.split('-').reverse().join('');
 		
-		var osDate = date.toString();
+		var osDate = data.toString();
 		var osDateF = osDate.slice('0','7');
 		var osDateFF = osDateF.replace('-','');
 		
@@ -820,6 +820,7 @@ var empty = [].filter.call( textinputs, function( el ) {
 
 		
 	var gOS = $("#nOS").val();
+	
 	//var inOS = document.formi2.texto.value
 	//var innSeq = document.getElementById("nSeqOS").innerHTML;
      //       if (gOS == "") {
@@ -858,7 +859,7 @@ var empty = [].filter.call( textinputs, function( el ) {
 		if ((ckbEquipRem != true) && (ckbEquipInst != true) && (ckbEquipRev != true)){
 		
 		//	if ((vlMovEquip != "MOV")||(vlMovInsEquip != "")||(vlMovRemEquip != "")|| (vlMovRevEquip = "SEM IDENTICAÇÃO")) {
-				alert("Ação Realizada!");
+				alert("Informe Atividade Equipamento!");
 				return;
 					
            		}
@@ -1169,11 +1170,14 @@ var empty = [].filter.call( textinputs, function( el ) {
                 todo = event.target.result;
                 // now modify the name and date 
                 todo.textx = $("#txtText").val();
-		todo.date = $("#Dates").val();
+                 
+                todo.date = $("#Dates").val();
                 todo.hsI = $("#txthsInic").val();                
                 todo.hsF = $("#txthsFina").val();
 
-				$("#divUpdate").css("visibility", "invisible");	
+				$("#divUpdate").css("visibility", "invisible");
+			  $("#btnAdd").show();
+			  $("#btnOS").show();
 			//	todo.func = $("#txtFun").val();
 			//	todo.vlMovEquip = $("#movEquipas").text();
 				
@@ -1221,7 +1225,7 @@ var empty = [].filter.call( textinputs, function( el ) {
                 todo = event.target.result;
 				//<button onclick='editTodo(" + todo.primaryKey + ")'>Edit</button>
                 if (todo != null) {
-                    list += "<tr><td><button style='background-color:red; color:white;  font-size: 80%; border-radius: 5px; border-width: 1px; padding:1px 4px;' onclick='deleteTodo(" + todo.primaryKey + ")'>DEL</button></td><td><button style='background-color:green; border-width: 1px; color:yellow; border-radius: 5px; font-size: 80%; padding:1px 4px;' onclick='editTodo(" + todo.primaryKey + ")'>EDIT</button></td>"
+                    list += "<tr><td><button style='background-color:red; color:white;  font-size: 80%; border-radius: 5px; border-width: 1px; padding:1px 4px;' onclick='deleteTodo(" + todo.primaryKey + ")'>DEL</button></td><td><button style='background-color:#808080; border-width: 1px; color:yellow; border-radius: 5px; font-size: 80%; padding:1px 4px;' onclick='editTodo(" + todo.primaryKey + ")'>EDIT</button></td>"
                     list += "<td>"  + todo.value.gOS + " </td><td>"  + todo.value.func + " </td><td>" + todo.value.date + " </td><td>" + todo.value.hsI + " </td><td>" + todo.value.hsF +
 					" </td><td>" + todo.value.cidad + " </td><td>" + todo.value.textx + " </td><td>" + todo.value.sReal + "</td><td>" + todo.value.mtVal + 
 					"</td><td>" + todo.value.vlJT + "</td><td>" + todo.value.vlMovEquip + "</td><td>" + todo.value.vlMovRevEquip + 
@@ -1408,7 +1412,7 @@ var empty = [].filter.call( textinputs, function( el ) {
 
 	function downloadCSVFile(csv_data) {
 var result = prompt("Informe a Senha!!", "");
-if (result == "@746") {
+if (result == "sr") {
 
 
  // Cria objeto de arquivo CSV e feed
@@ -1428,10 +1432,10 @@ if (result == "@746") {
  var vlDTFx = vlDTF.replaceAll("-", "");
 var vlDTI = DTI.substring(5, 10);
 var vlDTIx = vlDTI.replaceAll("-", "");
- alert(vlDTF);
+ //alert(vlDTF);
  equipe = $("#logEquip").text();
- var tbEquip = equipe.substring(17, 19);
-alert(tbEquip);
+ var tbEquip = equipe.substring(8, 10);
+alert(tbEquip+""+vlDTI+"-"+vlDTF);
 // var tipoAqr = "_.csv";
  // var nomeArq = DTF;
  //alert(nomeArq);
