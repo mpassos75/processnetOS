@@ -1169,7 +1169,11 @@ var empty = [].filter.call( textinputs, function( el ) {
                 todo = event.target.result;
                 // now modify the name and date 
                 todo.textx = $("#txtText").val();
-				
+		todo.date = $("#Dates").val();
+                todo.hsI = $("#txthsInic").val();                
+                todo.hsF = $("#txthsFina").val();
+
+				$("#divUpdate").css("visibility", "invisible");	
 			//	todo.func = $("#txtFun").val();
 			//	todo.vlMovEquip = $("#movEquipas").text();
 				
