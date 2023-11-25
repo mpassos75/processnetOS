@@ -173,7 +173,7 @@
 		
 		
 		<fieldset style="size=15; width:150px; height:120px; margin: -30px; margin-left: -45px">
-		<legend style="font:13px Tahoma" >&nbsp;&nbsp;TIPO MANUTENÇÃO</legend>
+		<legend style="font:12px Tahoma" >&nbsp;&nbsp;TIPO MANUTENÇÃO</legend>
 		
                <input type="radio" name="rdmanut" id="pre" value="PRE" ><label style="color:Blue; font:13px Tahoma" >PREVENTIVA</label>
 			  <p>
@@ -193,15 +193,15 @@
 		<p>		
 		</p>
 		<form>
-		<fieldset style="size=15; width:150px; height:120px; margin: -40px; margin-top: -45px; margin-left: -70px;"> 
-		<legend style="font:13px Tahoma">&nbsp;&nbsp;JORNADA TRABALHO</legend>
+		<fieldset style="size=15; width:150px; height:80px; margin: -40px; margin-top: -45px; margin-left: -70px;"> 
+		<legend style="font:12px Tahoma">&nbsp;&nbsp;JORNADA TRABALHO</legend>
 		
 		<input type="checkbox" name="ckJT" value="CONV" id="chekJTconv"><label style="color:Blue; font:13px Tahoma" >CONVENCIONAL</label>
 		<p>
 		
         <input type="checkbox"  name="ckJT" value="SOBR" id="chekJTsobre"><label style="color:Red; font:13px Tahoma" >SOBREAVISO</label>
 		<p>
-		 <input type="checkbox"  name="ckJT" value="CONT" id="chekJTcont" onchange="addCalend(this)" ><label style="color:Green; font:13px Tahoma" >CONTÍNUA</label>
+		 <input type="checkbox" style="visibility:hidden;" name="ckJT" value="CONT" id="chekJTcont" onchange="addCalend(this)" ><label style="color:white; font:13px Tahoma;" ></label>
 		</fieldset>
 		
 		</form>
@@ -278,7 +278,7 @@
 	
 	
 	<div>
-	 <h3 style="font:18px Tahoma" >INCLUIR SERVIÇO</h3>
+	 <h3 style="font:18px Tahoma" >DESCREVER SERVIÇO</h3>
 	 <p>
 	 
 	 <form action="#" method="post">
@@ -297,8 +297,8 @@
 
 
     <div id="divUpdate">
-        <input type="button" style='background-color:green; color:yellow' id="btnUpdate" onclick="updateTodo()" value="Salvar" ></input>
-        <input type="button" style='background-color:aqua; color:black' id="btnCancel" onclick="cancelEdit()" value="Cancelar" ></input>
+        <input type="button" style='background-color:#A9A9A9; color:yellow; height:25px; width:70px;' id="btnUpdate" onclick="updateTodo()" value="Salvar" ></input>
+        <input type="button" style='background-color:aqua; height:25px; width:70px; color:black' id="btnCancel" onclick="cancelEdit()" value="Cancelar" ></input>
     </div>
 	
 	
