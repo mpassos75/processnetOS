@@ -55,6 +55,7 @@ $(window).on("load", function(){
 				//  var index2 = store.createIndex("index2","gOS", { unique: false });
 				// store.createObjectStore(storename,{keyPath: "date"});
 				 store.createIndex("hsF", "hsF",{unique:false, multiEntry: true});
+
                 }
             }
 			
@@ -657,9 +658,9 @@ request.onsuccess = function (event) {
    //  alert("Task is performed-1"+ vlnOS);	
 	 
 		
-				var data = $("#Dates").val();
-				//var databr = date.split('-').reverse().join('');
-		
+				var databr = $("#Dates").val();
+				var data = databr.replace(/(\d*)-(\d*)-(\d*).*/, '$3/$2/$1');
+		//alert(data)
 		var osDate = data.toString();
 		var osDateF = osDate.slice('0','7');
 		var osDateFF = osDateF.replace('-','');
@@ -722,7 +723,7 @@ let length = vlnOS.push(jxx);
 	function confExec() {
 		
 		var textST = "";
-	if(confirm("SERVIÇO EXECUTADO?"+"\n"+toUnicodeVariant('CANCELAR', 'bold sans', 'bold')+"-> Ficará PENDENTE")){
+	if(confirm("SERVIÇO EXECUTADO?"+"\n"+toUnicodeVariant('CANCELAR', 'bold sans', 'bold')+"-> Status como PENDENTE")){
 //alert('SIM!');
 
 textST = "EXECUTADO";
@@ -859,7 +860,7 @@ var empty = [].filter.call( textinputs, function( el ) {
 		if ((ckbEquipRem != true) && (ckbEquipInst != true) && (ckbEquipRev != true)){
 		
 		//	if ((vlMovEquip != "MOV")||(vlMovInsEquip != "")||(vlMovRemEquip != "")|| (vlMovRevEquip = "SEM IDENTICAÇÃO")) {
-				alert("Informe Atividade Equipamento!");
+				alert("Informe Atividade Realizada!");
 				return;
 					
            		}
@@ -1041,7 +1042,7 @@ var empty = [].filter.call( textinputs, function( el ) {
 		
 			
 
-            var todo = { vlJT: $('input[name="ckJT"]:checked').val(), func: $("#txtFun").val(), date: $("#Dates").val(), hsI: $("#txthsInic").val(), hsF: $("#txthsFina"+
+            var todo = { vlJT: $('input[name="ckJT"]:checked').val(), func: $("#txtFun").val(), date: $("#Dates").val().replace(/(\d*)-(\d*)-(\d*).*/, '$3/$2/$1'), hsI: $("#txthsInic").val(), hsF: $("#txthsFina"+
 			"").val(),  cidad: (US+"-"+$("#SubUnidList").val()), textx: $("#txtText").val(), sReal: $("#realiz").val(), mtVal : $('input[name="rdmanut"]:checked').val(), vlMovEquip: $("#movEquipas"+
 			"").text(), vlMovInsEquip: $("#movEquipInst").text(), vlMovRemEquip: $("#movEquipRemo").text(), vlMovRevEquip: $("#movEquipRev").text(), gOS: $("#nOS").val()}; 
 			
@@ -1081,18 +1082,25 @@ var empty = [].filter.call( textinputs, function( el ) {
 				let nCid = (todo.cidad);
 			//alert(nCid);
 			//	alert((todo.vlJT));
-				
+			//	alert(todo.gOS+"ww")
                     $("#txtText").val(todo.textx);
+                    $("#nOS").val();
+                    alert("ATENÇÃO! OS - "+todo.gOS+ " será alterada!");
 				//	$("#txtFun").val(todo.func);
 				//	$("#movEquipas").text(todo.vlMovEquip);
 				//	$("##movEquipInst").text(todo.vlMovInsEquip);
 				//    $("#movEquipRemo").text(todo.vlMovRemEquip);
 				//    $("#movEquipRev").text(todo.vlMovRevEquip);
 				//	$("#SubUnidList").val(todo.nCid);
-                   $("#Dates").val(todo.date);
+                    
+                    var dtBr = todo.date
+                    var dtEua =  dtBr.split('/').reverse().join('-');
+					//alert("AA"+dtX)
+                    $("#Dates").val(dtEua);
 					$("#txthsInic").val(todo.hsI);
 					$("#txthsFina").val(todo.hsF);
 					$("#realiz").val(todo.sReal);
+
 				//	$("#rdTM").val(todo.mtVal); 
 				//	$('#input[name="ckJT"]').val(todo.vlJT); 
 					
@@ -1107,9 +1115,9 @@ var empty = [].filter.call( textinputs, function( el ) {
             };
 			equipe = $("#logEquip").text();
  var idEquip =equipe.substring(5, 8);
+			//key+idEquip
 			
-			
-			alert("ATENÇÃO! OS - 00"+ key+idEquip + " será alterada.");
+			//alert("ATENÇÃO! OS - "+todo.gOS+ " será alterada!");
         }
 // ------------------------------------------------------------------------Cancelar
 	function cancelEdit() {
@@ -1170,8 +1178,6 @@ var empty = [].filter.call( textinputs, function( el ) {
                 todo = event.target.result;
                 // now modify the name and date 
                 todo.textx = $("#txtText").val();
-                 
-                todo.date = $("#Dates").val();
                 todo.hsI = $("#txthsInic").val();                
                 todo.hsF = $("#txthsFina").val();
 
@@ -1186,13 +1192,13 @@ var empty = [].filter.call( textinputs, function( el ) {
 			//	todo.vlMovRevEquip = $("#movEquipRev").text();
 				
 				//todo.cidad = $("#SubUnidList").val();
-              
-				  todo.date = $("#Dates").val();
+              var dtBr = $("#Dates").val().replace(/(\d*)-(\d*)-(\d*).*/, '$3/$2/$1');
+				  todo.date = dtBr;
 				if (todo.date == "") {
 				alert("DATA em branco - Editar Novamente!");
 				}else{
 				
-				  todo.date = $("#Dates").val();
+				  todo.date = dtBr;
 				}
 			//	todo.hsI = $("#txthsInic").val();
 			//	todo.hsF = $("#txthsFina").val();
@@ -1428,14 +1434,14 @@ if (result == "sr") {
  temp_link.href = window.URL.createObjectURL(CSVFile);
  //var equipe = document.getElementById("idEquip").innerHTML;
  var equipe = "";
- var vlDTF = DTF.substring(5, 10);
+ var vlDTF = DTF.substring(5, 12);
  var vlDTFx = vlDTF.replaceAll("-", "");
 var vlDTI = DTI.substring(5, 10);
 var vlDTIx = vlDTI.replaceAll("-", "");
  //alert(vlDTF);
  equipe = $("#logEquip").text();
  var tbEquip = equipe.substring(8, 10);
-alert(tbEquip+""+vlDTI+"-"+vlDTF);
+alert(tbEquip+vlDTI+vlDTF);
 // var tipoAqr = "_.csv";
  // var nomeArq = DTF;
  //alert(nomeArq);
