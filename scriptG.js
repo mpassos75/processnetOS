@@ -1434,14 +1434,14 @@ if (result == "sr") {
  temp_link.href = window.URL.createObjectURL(CSVFile);
  //var equipe = document.getElementById("idEquip").innerHTML;
  var equipe = "";
- var vlDTF = DTF.substring(5, 12);
+ var vlDTF = DTF.substring(0, 5);
  var vlDTFx = vlDTF.replaceAll("-", "");
-var vlDTI = DTI.substring(5, 10);
+var vlDTI = DTI.substring(0, 5);
 var vlDTIx = vlDTI.replaceAll("-", "");
  //alert(vlDTF);
  equipe = $("#logEquip").text();
  var tbEquip = equipe.substring(8, 10);
-alert(tbEquip+vlDTI+vlDTF);
+//alert(tbEquip+vlDTI+vlDTF);
 // var tipoAqr = "_.csv";
  // var nomeArq = DTF;
  //alert(nomeArq);
