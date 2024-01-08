@@ -30,7 +30,7 @@
 		
 					// ------(A)----RelaçãoFuncionarios		
 		function Colab() {
-        var nFun = ["DEIVID G A FONTOURA","GUSTAVO D JUNIOR","JOSE R J MORAES","PAULO R S COSTA"];
+        var nFun = ["ALVARO JULIANO","ANDRE C W BIAZETTO","DEIVID G A FONTOURA","GELSON VIEIRA","GUSTAVO D JUNIOR","JOSE R JOB MORAES"];
         var html = "";
 
     for(var i = 0; i < nFun.length; i++)
